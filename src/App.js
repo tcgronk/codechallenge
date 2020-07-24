@@ -14,8 +14,8 @@ export default class App extends Component {
     };
   }
   handleAddNewJob=(job)=>{
-    this.setState({jobs:[this.state.jobs,
-      ...job]})
+    this.setState({jobs:[...this.state.jobs,
+      job]})
   }
   handleDeleteJob=(id)=>{
     this.setState({jobs: this.state.jobs.filter(job => job.id !== id)
