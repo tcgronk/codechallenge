@@ -1,4 +1,5 @@
 .List{
     display: flex; 
     justify-content: center;
+    margin: 1.5%;
 }
