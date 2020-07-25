@@ -48,14 +48,12 @@ export default class Job extends Component {
             <div className="Job" onMouseOver={this.handleShowDelete} 
             onMouseLeave={this.handleHideDelete}
             style={{backgroundColor: job.color}}
-            key={job.id} value={job.id}>
-            <div>
+            key={job.id}>
+            <div key={job.id}>
             <h3>{job.company}</h3>
             <h4>{job.title}</h4>
             </div>
-            <div className="JobDetails">
-            {/* <h5>{job.time}</h5> */}
-
+            <div className="JobDetails" key={job.id}>
             {this.state.showicon
             ?(<button key={job.id} className="Delete" onClick={()=>this.handleShowDeleteWindow(job.id)}><FontAwesomeIcon className="icon" icon={faTrash}/></button>)
               :(null)
