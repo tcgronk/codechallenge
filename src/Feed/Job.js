@@ -61,7 +61,7 @@ export default class Job extends Component {
             }
             </div>
           {this.state.handleShowDeleteWindow
-          ?(<div className="addjob"><div className="DeleteWindow"><p>Are you sure?</p><button onClick={()=>this.handleDeleteJob(job.id)}>Delete</button><button onClick={this.handleCancelDelete}>Cancel</button></div></div>)
+          ?(<div className="addjob"><div className="DeleteWindow"><h1>Delete Job</h1><h3>Are you sure you want to delete this job?</h3><div> <button  className="SubmitButton" onClick={()=>this.handleDeleteJob(job.id)}>Delete</button>{" "}<button className="CancelButton"onClick={this.handleCancelDelete}>Cancel</button></div></div></div>)
           :null}
           </div>
           

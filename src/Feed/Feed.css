@@ -3,9 +3,9 @@
     position: fixed; 
     width: 100vw;
     height: 100vh;
-    background-color: rgba(17, 2, 26, 0.68);
+    background-color: rgba(66, 43, 79, 0.303);
     top: 0;
-    left: 0
+    left: 0;
 }
 
 
@@ -36,7 +36,7 @@ input{
     font-size: 22px;
     width: 65%
 }
-#SubmitButton{
+.SubmitButton{
     background-color: rgb(175, 20, 252);
     border-radius: 7px;
     color: white;
@@ -44,8 +44,6 @@ input{
     border: none
 }
 .Feed{
-    background-color: rgb(238, 238, 238);
-    padding-bottom: 5%;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }

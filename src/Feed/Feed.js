@@ -86,7 +86,7 @@ handleCancelAdd = () => {
             <div className="Buttons">
               <button
                 className="Button"
-                id="SubmitButton"
+              className="SubmitButton"
                 type="submit"
                 disabled={!this.state.formValid}
               >
