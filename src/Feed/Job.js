@@ -16,7 +16,8 @@ export default class Job extends Component {
     super(props);
       this.state={
         showicon: false,
-        handleShowDeleteWindow: false
+        handleShowDeleteWindow: false,
+        deleteid:null
       }
   }
     static contextType = ApiContext;
@@ -26,14 +27,14 @@ export default class Job extends Component {
     handleHideDelete=()=>{
       this.setState({showicon: false})
     }
-    handleShowDeleteWindow=()=>{
-      this.setState({handleShowDeleteWindow: true})
+    handleShowDeleteWindow=(id)=>{
+      this.setState({handleShowDeleteWindow: true, deleteid: id})
     }
     handleCancelDelete=()=>{
       this.setState({handleShowDeleteWindow: false})
     }
-    handleDeleteJob=(id)=>{
-      this.context.handleDeleteJob(id)
+    handleDeleteJob=()=>{
+      this.context.handleDeleteJob(this.state.deleteid)
       this.setState({handleShowDeleteWindow: false})
 
     }
@@ -56,12 +57,12 @@ export default class Job extends Component {
             {/* <h5>{job.time}</h5> */}
 
             {this.state.showicon
-            ?(<button key={job.id} className="Delete" onClick={this.handleShowDeleteWindow}><FontAwesomeIcon className="icon" icon={faTrash}/></button>)
+            ?(<button key={job.id} className="Delete" onClick={()=>this.handleShowDeleteWindow(job.id)}><FontAwesomeIcon className="icon" icon={faTrash}/></button>)
               :(null)
             }
             </div>
           {this.state.handleShowDeleteWindow
-          ?(<div className="addjob"><div className="DeleteWindow"><h1>Delete Job</h1><h3>Are you sure you want to delete this job?</h3><div> <button  className="SubmitButton" onClick={()=>this.handleDeleteJob(job.id)}>Delete</button>{" "}<button className="CancelButton"onClick={this.handleCancelDelete}>Cancel</button></div></div></div>)
+          ?(<div className="addjob"><div className="DeleteWindow"><h1>Delete Job</h1><h3>Are you sure you want to delete this job?</h3><div key={job.id}> <button  className="SubmitButton" onClick={this.handleDeleteJob()}>Delete</button>{" "}<button className="CancelButton"onClick={this.handleCancelDelete}>Cancel</button></div></div></div>)
           :null}
           </div>
           
