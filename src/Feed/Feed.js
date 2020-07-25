@@ -37,6 +37,8 @@ handleSubmit(e) {
       title: e.target["title"].value
     }
     this.context.handleAddNewJob(job)
+    this.setState({show: false})
+
 }
 handleCancelAdd = () => {
     this.setState({show: false})
@@ -44,13 +46,15 @@ handleCancelAdd = () => {
 
   render() {
     return (
-      <div className="Feed">
-        <button onClick={this.showAddJobWindow}>Add a Job</button>
+      <div className="Feed" >
+        <button className="Button" onClick={this.showAddJobWindow}>Add a Job</button>
         {this.state.show
-        ?(
-            <form id="addjob" onSubmit={e => this.handleSubmit(e)}>
+        ?(<div id="addjob">
+            <form id='jobform' onSubmit={e => this.handleSubmit(e)}>
             <div className="form-section">
+            <br/><br/>
               <label htmlFor="company">Company Name: </label>
+              <br/>
               <input
                 type="text"
                 name="company"
@@ -59,8 +63,9 @@ handleCancelAdd = () => {
                 value={this.company}
                 onChange={e => this.validateEntry(e)}
                 required
-              />
+              /><br/><br/>
               <label htmlFor="title">Job Title: </label>
+              <br/>
               <input
                 type="text"
                 name="title"
@@ -88,7 +93,7 @@ handleCancelAdd = () => {
               </button>
             </div>
             </form>
-
+            </div>
         
         )
         : (null)
