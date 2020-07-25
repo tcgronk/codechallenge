@@ -1,11 +1,10 @@
 .Job{
-    border: 3px solid rgba(56, 181, 169, 0.988);
     margin: 5% auto 5% auto;
     padding: 3%;
     border-radius: 17px;
     width: 60%;
-    background-color: white;
 }
+
 
 .Jobcard{
     width: 100%

@@ -2,13 +2,24 @@ import React, { Component } from "react";
 import ApiContext from "../ApiContext"
 import List from "./List";
 import "./Feed.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faPlus, faFan
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+  faPlus
+);
 
 export default class Feed extends Component {
 constructor(props){
     super(props);
     this.state={
         show: false,
-        formValid:true
+        formValid:true,
+        colors: ["#6baed7fc","#f56e64fc","#1bcb4d","#6276ba"]
+        
     }
 }
 static contextType = ApiContext;
@@ -34,7 +45,8 @@ handleSubmit(e) {
     const job = {
         id: this.context.jobs.length,
       company: e.target["company"].value,
-      title: e.target["title"].value
+      title: e.target["title"].value,
+      color: this.state.colors[Math.floor(Math.random()*this.state.colors.length)]
     }
     this.context.handleAddNewJob(job)
     this.setState({show: false})
@@ -46,15 +58,13 @@ handleCancelAdd = () => {
 
   render() {
     return (
-      <div  className="Feed">
-        <button className="Button" onClick={this.showAddJobWindow}>Add a Job</button>
+      <div  className="Feed" >
+        <button className="Button" onClick={this.showAddJobWindow}><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon></button>
         {this.state.show
-        ?(<div id="addjob">
-            <form id='jobform' onSubmit={e => this.handleSubmit(e)}>
-            <div className="form-section">
-            <br/><br/>
-              <label htmlFor="company">Company Name: </label>
-              <br/>
+        ?(<div className="addjob">
+            <form id='jobform'  onSubmit={e => this.handleSubmit(e)}>
+            <div className="form-section" >
+            
               <input
                 type="text"
                 name="company"
@@ -64,8 +74,6 @@ handleCancelAdd = () => {
                 onChange={e => this.validateEntry(e)}
                 required
               /><br/><br/>
-              <label htmlFor="title">Job Title: </label>
-              <br/>
               <input
                 type="text"
                 name="title"
@@ -79,17 +87,11 @@ handleCancelAdd = () => {
             <div className="Buttons">
               <button
                 className="Button"
+                id="SubmitButton"
                 type="submit"
                 disabled={!this.state.formValid}
               >
-                Submit
-              </button>
-              <button
-                className="Button"
-                type="reset"
-                onClick={e => this.handleCancelAdd()}
-              >
-                Cancel
+                Continue
               </button>
             </div>
             </form>

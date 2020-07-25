@@ -15,17 +15,20 @@ export default class Job extends Component {
     static contextType = ApiContext;
     render() {
     let jobs=this.context.jobs
+
     return (
 
-      <div className="Jobcard">
+      <div className="Jobcard" >
         {jobs.map((job) => (
-          <div className="Job">
+            <div className="Job" 
+            style={{backgroundColor: job.color}}>
             <h3>{job.company}</h3>
             <h4>{job.title}</h4>
             <button onClick={()=>this.context.handleDeleteJob(job.id)}><FontAwesomeIcon className="icon" icon={faTrash}/></button>
           </div>
+          
         ))}
-      </div>
+        </div>
 
     );
   }

@@ -8,8 +8,8 @@ export default class App extends Component {
     super(props);
     this.state = {
       jobs: [
-        { id: 0, company: "Apple", title: "Developer" },
-        { id: 1, company: "Github", title: "Sales Engineer" },
+        { id: 0, company: "Apple", title: "Developer", color: "#6baed7fc" },
+        { id: 1, company: "Github", title: "Sales Engineer", color: "#f56e64fc" },
       ],
     };
   }
@@ -32,8 +32,8 @@ export default class App extends Component {
       >
         <div className="App">
           <header className="App-header">
-            <h1>Job Wishlist</h1>
-            <h2>Saved Jobs: {this.state.jobs.length} </h2>
+            <h1>Wishlist</h1>
+            <h2>{this.state.jobs.length} Jobs </h2>
           </header>
           <Feed />
         </div>
