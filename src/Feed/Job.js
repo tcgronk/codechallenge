@@ -55,10 +55,7 @@ export default class Job extends Component {
             <h4>{job.title}</h4>
             </div>
             <div className="JobDetails">
-            {this.state.showicon
-            ?(<button className="Delete" onClick={()=>this.handleShowDeleteWindow(job.id)}><FontAwesomeIcon className="icon" icon={faTrash}/></button>)
-              :(null)
-            }
+            <button className="Delete" onClick={()=>this.handleShowDeleteWindow(job.id)}><FontAwesomeIcon className="icon" icon={faTrash}/></button>
             </div>
           {this.state.ShowDeleteWindow
           ?(<div className="addjob"><div className="DeleteWindow"><h1>Delete Job</h1><h3>Are you sure you want to delete this job?</h3><div > <button  className="SubmitButton" onClick={this.handleDeleteJob}>Delete</button>{" "}<button className="CancelButton"onClick={this.handleCancelDelete}>Cancel</button></div></div></div>)
