@@ -58,7 +58,9 @@ handleCancelAdd = () => {
   render() {
     return (
       <div  className="Feed" >
+        <div className="feedBanner">
         <button className="Button" onClick={this.showAddJobWindow}><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon></button>
+        </div>
         {this.state.show
         ?(<div className="addjob">
             <form id='jobform'  onSubmit={e => this.handleSubmit(e)}>
@@ -85,7 +87,6 @@ handleCancelAdd = () => {
             </div>
             <div className="Buttons">
               <button
-                className="Button"
               className="SubmitButton"
                 type="submit"
                 disabled={!this.state.formValid}
