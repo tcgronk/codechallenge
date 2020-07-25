@@ -1,5 +1,11 @@
 .List{
     display: flex; 
     justify-content: center;
-    margin: 1.5%;
+    margin: 1.5% auto 1.5% auto;
+    background-color: rgba(56, 181, 169, 0.564);
+    border: 3px solid rgba(56, 181, 169, 0.988);
+    border-radius: 17px;
+    width: 70%;
+    height: 100%;
+    
 }

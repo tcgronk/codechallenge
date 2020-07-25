@@ -16,7 +16,8 @@ export default class Job extends Component {
     render() {
     let jobs=this.context.jobs
     return (
-      <div>
+
+      <div className="Jobcard">
         {jobs.map((job) => (
           <div className="Job">
             <h3>{job.company}</h3>
@@ -25,6 +26,7 @@ export default class Job extends Component {
           </div>
         ))}
       </div>
+
     );
   }
 }

@@ -46,7 +46,7 @@ handleCancelAdd = () => {
 
   render() {
     return (
-      <div className="Feed" >
+      <div  className="Feed">
         <button className="Button" onClick={this.showAddJobWindow}>Add a Job</button>
         {this.state.show
         ?(<div id="addjob">
