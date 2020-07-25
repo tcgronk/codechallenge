@@ -16,7 +16,7 @@ export default class Job extends Component {
     super(props);
       this.state={
         showicon: false,
-        handleShowDeleteWindow: false,
+        ShowDeleteWindow: false,
         deleteid:null
       }
   }
@@ -27,20 +27,21 @@ export default class Job extends Component {
     handleHideDelete=()=>{
       this.setState({showicon: false})
     }
+
     handleShowDeleteWindow=(id)=>{
-      this.setState({handleShowDeleteWindow: true, deleteid: id})
+      this.setState({ShowDeleteWindow: true, deleteid: id})
     }
     handleCancelDelete=()=>{
-      this.setState({handleShowDeleteWindow: false})
+      this.setState({ShowDeleteWindow: false})
     }
     handleDeleteJob=()=>{
+      console.log(this.state.deleteid)
       this.context.handleDeleteJob(this.state.deleteid)
-      this.setState({handleShowDeleteWindow: false})
+      this.setState({ShowDeleteWindow: false})
 
     }
     render() {
     let jobs=this.context.jobs
-
     return (
 
       <div className="Jobcard" >
@@ -55,12 +56,12 @@ export default class Job extends Component {
             </div>
             <div className="JobDetails">
             {this.state.showicon
-            ?(<button  className="Delete" onClick={()=>this.handleShowDeleteWindow(job.id)}><FontAwesomeIcon className="icon" icon={faTrash}/></button>)
+            ?(<button className="Delete" onClick={()=>this.handleShowDeleteWindow(job.id)}><FontAwesomeIcon className="icon" icon={faTrash}/></button>)
               :(null)
             }
             </div>
-          {this.state.handleShowDeleteWindow
-          ?(<div className="addjob"><div className="DeleteWindow"><h1>Delete Job</h1><h3>Are you sure you want to delete this job?</h3><div > <button  className="SubmitButton" onClick={this.handleDeleteJob()}>Delete</button>{" "}<button className="CancelButton"onClick={this.handleCancelDelete}>Cancel</button></div></div></div>)
+          {this.state.ShowDeleteWindow
+          ?(<div className="addjob"><div className="DeleteWindow"><h1>Delete Job</h1><h3>Are you sure you want to delete this job?</h3><div > <button  className="SubmitButton" onClick={this.handleDeleteJob}>Delete</button>{" "}<button className="CancelButton"onClick={this.handleCancelDelete}>Cancel</button></div></div></div>)
           :null}
           </div>
           

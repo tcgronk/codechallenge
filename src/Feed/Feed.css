@@ -17,6 +17,7 @@
     margin: 300px auto 0 auto;
     border-radius: 1%;
     display: flex;
+    padding: 1%;
     flex-direction: column;
     justify-content: space-evenly;
     color:black;
@@ -44,7 +45,7 @@ input{
     border: none
 }
 .Feed{
-    height: 100%;
+    height: 100vh;
     width: 100%;
     padding-bottom: 5%;
     background-color: rgba(192, 192, 192, 0.228);
