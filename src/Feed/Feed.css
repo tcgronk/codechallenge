@@ -44,8 +44,9 @@ input{
     border: none
 }
 .Feed{
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    padding-bottom: 5%;
     background-color: rgba(192, 192, 192, 0.228);
 
 }
