@@ -5,7 +5,7 @@ import "./Feed.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faPlus, faFan
+  faPlus
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -30,8 +30,6 @@ showAddJobWindow=()=> {
 validateEntry=e=>{
     e.preventDefault();
     const value = e.target.value.trim()
-    const name = e.target.name
-
     if(value.length>0){
         this.validateForm();
     }
@@ -46,7 +44,8 @@ handleSubmit(e) {
         id: this.context.jobs.length,
       company: e.target["company"].value,
       title: e.target["title"].value,
-      color: this.state.colors[Math.floor(Math.random()*this.state.colors.length)]
+      color: this.state.colors[Math.floor(Math.random()*this.state.colors.length)],
+      
     }
     this.context.handleAddNewJob(job)
     this.setState({show: false})
