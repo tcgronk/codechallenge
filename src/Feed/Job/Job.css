@@ -1,0 +1,43 @@
+.Job{
+    margin: 2% auto 0 auto;
+    padding: 3%;
+    border-radius: 17px;
+    width: 60%;
+    color: white;
+    height: 170px;
+    display: flex;
+    justify-content: space-between
+
+}
+
+
+.Job-Card{
+    width: 100%;
+    
+}
+.Delete{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 26px;
+}
+
+.Job-Details{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%
+}
+
+
+.Delete-Window{
+    padding:3%
+}
+
+.Cancel-Button{
+    background-color: rgba(146, 103, 167, 0.781);
+    border-radius: 7px;
+    color: white;
+    font-size: 18px;
+    border: none
+}
