@@ -1,14 +1,13 @@
 .App {
   text-align: center;
 }
-*{
-  font-family: 'Montserrat', sans-serif;
+* {
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 
-
 .App-header {
-  background-color: #3B35CC;
+  background-color: #3b35cc;
   height: 150px;
   display: flex;
   flex-direction: column;
@@ -17,4 +16,3 @@
   padding: 2%;
   color: white;
 }
-

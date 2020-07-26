@@ -1,53 +1,50 @@
-
-.addjob{
-    position: fixed; 
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(66, 43, 79, 0.303);
-    top: 0;
-    left: 0;
+.Job-Add {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(66, 43, 79, 0.303);
+  top: 0;
+  left: 0;
 }
 
-
-#jobform,.DeleteWindow{
-    max-width: 250px;
-    height: 250px;
-    background-color: white;
-    border-radius: 17px;
-    margin: 300px auto 0 auto;
-    border-radius: 1%;
-    display: flex;
-    padding: 1%;
-    flex-direction: column;
-    justify-content: space-evenly;
-    color:black;
+#Job-Form,
+.Delete-Window {
+  max-width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 17px;
+  margin: 300px auto 0 auto;
+  border-radius: 1%;
+  display: flex;
+  padding: 1%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: black;
 }
-input{
-    border: 2px solid  rgb(175, 20, 252);
-    font-size: 18px;
-    border-radius: 7px;
+input {
+  border: 2px solid rgb(175, 20, 252);
+  font-size: 18px;
+  border-radius: 7px;
 }
 
-.Button{
-    margin-top: 3%;
-    background-color: white;
-    color: gray;
-    border-radius: 7px;
-    border: none;
-    font-size: 22px;
-    width: 65%;
-    background-color: rgba(192, 192, 192, 0.228);
-
+.Button {
+  margin-top: 3%;
+  background-color: white;
+  color: gray;
+  border-radius: 7px;
+  border: none;
+  font-size: 22px;
+  width: 54%;
+  background-color: rgba(192, 192, 192, 0.228);
 }
-.SubmitButton{
-    background-color: rgb(175, 20, 252);
-    border-radius: 7px;
-    color: white;
-    font-size: 18px;
-    border: none
+.Submit-Button {
+  background-color: rgb(175, 20, 252);
+  border-radius: 7px;
+  color: white;
+  font-size: 18px;
+  border: none;
 }
-.Feed{
-    height: 100%;
-    width: 100%;    
-
+.Feed {
+  height: 100%;
+  width: 100%;
 }

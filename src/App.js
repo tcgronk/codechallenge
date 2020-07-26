@@ -9,17 +9,21 @@ export default class App extends Component {
     this.state = {
       jobs: [
         { id: 0, company: "Apple", title: "Developer", color: "#6baed7fc" },
-        { id: 1, company: "Github", title: "Sales Engineer", color: "#f56e64fc" },
+        {
+          id: 1,
+          company: "Github",
+          title: "Sales Engineer",
+          color: "#f56e64fc",
+        },
       ],
     };
   }
-  handleAddNewJob=(job)=>{
-    this.setState({jobs:[job,
-      ...this.state.jobs]})
-  }
-  handleDeleteJob=(id)=>{
-    this.setState({jobs: this.state.jobs.filter(job => job.id !== id)
-  })}
+  handleAddNewJob = (job) => {
+    this.setState({ jobs: [job, ...this.state.jobs] });
+  };
+  handleDeleteJob = (id) => {
+    this.setState({ jobs: this.state.jobs.filter((job) => job.id !== id) });
+  };
 
   render() {
     return (
@@ -27,7 +31,7 @@ export default class App extends Component {
         value={{
           jobs: this.state.jobs,
           handleAddNewJob: this.handleAddNewJob,
-          handleDeleteJob: this.handleDeleteJob
+          handleDeleteJob: this.handleDeleteJob,
         }}
       >
         <div className="App">
