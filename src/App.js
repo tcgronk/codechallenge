@@ -36,7 +36,7 @@ export default class App extends Component {
       >
         <div className="App">
           <header className="App-header">
-            <h1>Wishlist</h1>
+            <h1>Job Wishlist</h1>
             <h2>{this.state.jobs.length} Jobs </h2>
           </header>
           <Feed />
